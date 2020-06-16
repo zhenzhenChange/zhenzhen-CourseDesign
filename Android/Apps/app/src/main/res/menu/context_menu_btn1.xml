@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="更改文本颜色">
+        <menu>
+            <item
+                android:id="@+id/red"
+                android:title="红色" />
+            <item
+                android:id="@+id/green"
+                android:title="绿色" />
+            <item
+                android:id="@+id/blue"
+                android:title="蓝色" />
+        </menu>
+    </item>
+    <item
+        android:id="@+id/rename"
+        android:title="重命名" />
+</menu>

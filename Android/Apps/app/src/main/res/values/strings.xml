@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">MyApps</string>
+
+    <string name="username">username</string>
+    <string name="password">password</string>
+    <string name="login">login</string>
+    <string name="register">register</string>
+    <string name="info">info</string>
+
+    <string name="header">header</string>
+    <string name="left">left</string>
+    <string name="center">center</string>
+    <string name="right">right</string>
+    <string name="footer">footer</string>
+
+    <string-array name="spinner">
+        <item>篮球</item>
+        <item>足球</item>
+        <item>网游</item>
+        <item>Code</item>
+    </string-array>
+</resources>

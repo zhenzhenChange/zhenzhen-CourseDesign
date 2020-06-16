@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zhenzhen.apps">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activity_app_10_02_List"></activity>
+        <activity android:name=".activity_app_10_02">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity_app_10_01" />
+        <activity android:name=".activity_app_09_02_result" />
+        <activity android:name=".activity_app_09_02_start" />
+        <activity android:name=".activity_app_09_02" />
+        <activity android:name=".activity_app_09_01_GoToNext" />
+        <activity android:name=".activity_app_09_01_GoTo" />
+        <activity android:name=".activity_app_09_01" />
+        <activity android:name=".activity_app_08" />
+        <activity android:name=".activity_app_07_02" />
+        <activity android:name=".activity_app_07_01" />
+        <activity android:name=".activity_app_06_02_02" />
+        <activity android:name=".activity_app_06_02_01" />
+        <activity android:name=".activity_app_06_01_login" />
+        <activity android:name=".activity_app_06_01" />
+        <activity android:name=".activity_app_05_03_GridItem" />
+        <activity android:name=".activity_app_05_03" />
+        <activity android:name=".activity_app_05_02_02_ListItem" />
+        <activity android:name=".activity_app_05_02_02" />
+        <activity android:name=".activity_app_05_02_01" />
+        <activity android:name=".activity_app_05_01_02" />
+        <activity android:name=".activity_app_05_01_01" />
+        <activity android:name=".activity_app_04_02" />
+        <activity android:name=".activity_app_04_01" />
+        <activity android:name=".activity_app_03_03" />
+        <activity android:name=".activity_app_03_02" />
+        <activity android:name=".activity_app_03_01" />
+        <activity android:name=".activity_app_02" />
+        <activity android:name=".activity_app_01" />
+    </application>
+
+</manifest>

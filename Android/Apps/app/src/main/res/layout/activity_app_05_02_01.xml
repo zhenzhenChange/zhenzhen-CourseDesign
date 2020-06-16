@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity_app_05_02_01">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#00AABB"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="面条列表"
+        android:textColor="#FFF"
+        android:textSize="25sp" />
+
+    <ListView
+        android:id="@+id/foodList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="#AAA"
+        android:dividerHeight="5dp" />
+</LinearLayout>

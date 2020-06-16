@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="更改字体大小">
+        <menu>
+            <item
+                android:id="@+id/small"
+                android:title="较小" />
+            <item
+                android:id="@+id/middle"
+                android:title="适中" />
+            <item
+                android:id="@+id/large"
+                android:title="较大" />
+        </menu>
+    </item>
+    <item android:title="更改背景颜色">
+        <menu>
+            <item
+                android:id="@+id/bgGray"
+                android:title="灰色" />
+            <item
+                android:id="@+id/bgBlack"
+                android:title="黑色" />
+            <item
+                android:id="@+id/bgMagenta"
+                android:title="品红色" />
+        </menu>
+    </item>
+</menu>

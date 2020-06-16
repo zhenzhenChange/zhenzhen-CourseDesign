@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity_app_07_01">
+
+    <TextView
+        android:id="@+id/test"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="测试文字"
+        android:textSize="25sp" />
+
+    <TableRow android:layout_marginLeft="10dp">
+
+        <TextView android:text="大小" />
+
+        <Button
+            android:id="@+id/bigger"
+            android:text="增大" />
+
+        <Button
+            android:id="@+id/smaller"
+            android:text="减小" />
+    </TableRow>
+
+    <TableRow android:layout_marginLeft="10dp">
+
+        <TextView android:text="颜色" />
+
+        <Button
+            android:id="@+id/red"
+            android:text="红色" />
+
+        <Button
+            android:id="@+id/blue"
+            android:text="蓝色" />
+
+        <Button
+            android:id="@+id/green"
+            android:text="绿色" />
+    </TableRow>
+
+    <TableRow android:layout_marginLeft="10dp">
+
+        <TextView android:text="样式" />
+
+        <Button
+            android:id="@+id/bold"
+            android:text="加粗" />
+
+        <Button
+            android:id="@+id/tilt"
+            android:text="倾斜" />
+
+        <Button
+            android:id="@+id/old"
+            android:text="默认" />
+    </TableRow>
+
+</TableLayout>

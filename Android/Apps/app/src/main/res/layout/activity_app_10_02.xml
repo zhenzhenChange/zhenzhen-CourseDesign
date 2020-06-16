@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp"
+    android:stretchColumns="1"
+    tools:context=".activity_app_10_02">
+
+    <TableRow>
+        <TextView
+            android:text="主题"
+            android:textSize="25sp" />
+        <EditText android:id="@+id/theme" />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:text="内容"
+            android:textSize="25sp" />
+        <EditText
+            android:id="@+id/content"
+            android:minLines="2" />
+    </TableRow>
+
+    <TableRow>
+        <Button
+            android:onClick="btnDate"
+            android:text="时间" />
+        <EditText
+            android:id="@+id/date"
+            android:enabled="false" />
+    </TableRow>
+
+    <LinearLayout android:gravity="center_horizontal">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="25dp"
+            android:onClick="add"
+            android:text="添加" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="show"
+            android:text="查询" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/table"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            style="@style/TextView"
+            android:layout_weight="1"
+            android:text="ID" />
+        <TextView
+            style="@style/TextView"
+            android:layout_weight="2"
+            android:text="主题" />
+        <TextView
+            style="@style/TextView"
+            android:layout_weight="3"
+            android:text="内容" />
+        <TextView
+            style="@style/TextView"
+            android:layout_weight="3"
+            android:text="日期" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</TableLayout>
