@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MyApps</string>
+    <string name="btn_rotate">旋转</string>
+    <string name="btn_bottom">下落</string>
+
+    <string name="btn_left">左</string>
+    <string name="btn_right">右</string>
+
+    <string name="btn_start">开始</string>
+    <string name="btn_pause">暂停</string>
+</resources>
