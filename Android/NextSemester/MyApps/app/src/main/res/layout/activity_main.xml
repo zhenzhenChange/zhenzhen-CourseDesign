@@ -28,6 +28,13 @@
             android:layout_marginStart="5dp"
             android:orientation="vertical">
 
+            <!-- 重新开始按钮 -->
+            <Button
+                android:id="@+id/btn_restart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_restart" />
+
             <!-- 开始按钮 -->
             <Button
                 android:id="@+id/btn_start"
