@@ -8,4 +8,8 @@
 
     <string name="btn_start">开始</string>
     <string name="btn_pause">暂停</string>
+
+    <string name="preview">下一块预览</string>
+
+    <string name="score_cur">当前得分</string>
 </resources>

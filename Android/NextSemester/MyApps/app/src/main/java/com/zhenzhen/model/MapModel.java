@@ -1,6 +1,7 @@
 package com.zhenzhen.model;
 
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 
 import com.zhenzhen.Config;
@@ -27,14 +28,14 @@ public class MapModel {
         maps = new boolean[Config.MAP_COLS][Config.MAP_ROWS];
 
         linePaint = new Paint();                                // 辅助线画笔实例化
-        linePaint.setColor(0xffff0000);                         // 画笔颜色
+        linePaint.setColor(Color.BLUE);                         // 画笔颜色
         linePaint.setAntiAlias(true);                           // 开启抗锯齿
 
         mapPaint = new Paint();                                 // 地图画笔实例化
         mapPaint.setColor(0xff666666);
         mapPaint.setAntiAlias(true);
 
-        statePaint = new Paint();                                // 状态画笔实例化
+        statePaint = new Paint();                               // 状态画笔实例化
         statePaint.setColor(0xffff0000);
         statePaint.setAntiAlias(true);
         statePaint.setTextSize(100);
@@ -93,16 +94,25 @@ public class MapModel {
 
     /**
      * 消除行
+     *
+     * @return lines 消除的行数
      */
-    public void passLines() {
+    public int passLines() {
+        // 记录消除行数
+        int lines = 0;
+
         for (int y = maps[0].length - 1; y > 0; y--) {
             if (checkLines(y)) {
                 deleteLines();
 
                 // 从消去的下一行开始继续循环
                 y++;
+
+                lines++;
             }
         }
+
+        return lines;
     }
 
     /**

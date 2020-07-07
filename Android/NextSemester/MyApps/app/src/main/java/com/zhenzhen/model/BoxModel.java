@@ -11,6 +11,10 @@ public class BoxModel {
     public int boxType;               // 方块类型
     public Point[] boxs;              // 方块
 
+    public Point[] boxPreview;        // 预览方块
+    public int boxPreviewType;        // 预览方块类型
+    public int boxPreviewSize;        // 预览方块大小
+
     Paint boxPaint;                   // 方块画笔
 
     public BoxModel(int boxSize) {
@@ -29,38 +33,52 @@ public class BoxModel {
      * 创建方块、生成新方块
      */
     public void createBoxs() {
+        if (boxPreview == null) createBoxsPreview();
+
+        // 当前方块 = 预览的方块
+        boxs = boxPreview;
+        boxType = boxPreviewType;
+
+        createBoxsPreview();
+    }
+
+    /**
+     * 生成预览方块
+     */
+    public void createBoxsPreview() {
         // 随机生成方块的类型
         Random random = new Random();
-        boxType = random.nextInt(7);
+        boxPreviewType = random.nextInt(7);
 
-        switch (boxType) {
+        // 生成下一块预览
+        switch (boxPreviewType) {
             // 田
             case 0:
-                boxs = new Point[]{new Point(4, 0), new Point(5, 0), new Point(4, 1), new Point(5, 1)};
+                boxPreview = new Point[]{new Point(4, 0), new Point(5, 0), new Point(4, 1), new Point(5, 1)};
                 break;
             // L
             case 1:
-                boxs = new Point[]{new Point(4, 1), new Point(5, 0), new Point(3, 1), new Point(5, 1)};
+                boxPreview = new Point[]{new Point(4, 1), new Point(5, 0), new Point(3, 1), new Point(5, 1)};
                 break;
             // J
             case 2:
-                boxs = new Point[]{new Point(4, 1), new Point(3, 0), new Point(3, 1), new Point(5, 1)};
+                boxPreview = new Point[]{new Point(4, 1), new Point(3, 0), new Point(3, 1), new Point(5, 1)};
                 break;
             // I
             case 3:
-                boxs = new Point[]{new Point(4, 0), new Point(3, 0), new Point(5, 0), new Point(6, 0)};
+                boxPreview = new Point[]{new Point(4, 0), new Point(3, 0), new Point(5, 0), new Point(6, 0)};
                 break;
             // S
             case 4:
-                boxs = new Point[]{new Point(4, 1), new Point(4, 0), new Point(3, 1), new Point(5, 0)};
+                boxPreview = new Point[]{new Point(4, 1), new Point(4, 0), new Point(3, 1), new Point(5, 0)};
                 break;
             // Z
             case 5:
-                boxs = new Point[]{new Point(4, 1), new Point(3, 0), new Point(4, 0), new Point(5, 1)};
+                boxPreview = new Point[]{new Point(4, 1), new Point(3, 0), new Point(4, 0), new Point(5, 1)};
                 break;
             // T
             case 6:
-                boxs = new Point[]{new Point(4, 1), new Point(4, 0), new Point(3, 1), new Point(5, 1)};
+                boxPreview = new Point[]{new Point(4, 1), new Point(4, 0), new Point(3, 1), new Point(5, 1)};
                 break;
         }
     }
@@ -134,5 +152,24 @@ public class BoxModel {
      */
     public boolean checkBounddary(int x, int y, MapModel mapModel) {
         return (x < 0 || y < 0 || x >= mapModel.maps.length || y >= mapModel.maps[0].length || mapModel.maps[x][y] /* 碰到了地图上的其他方块 */);
+    }
+
+    /**
+     * 绘制预览
+     *
+     * @param canvas canvas
+     */
+    public void drawPreview(Canvas canvas, int width) {
+        if (boxPreview != null) {
+            // 将区域分割成 6 等份
+            if (boxPreviewSize == 0) boxPreviewSize = width / 6;
+
+            for (Point box : boxPreview) {
+                canvas.drawRect((box.x - 3) * boxPreviewSize, (box.y + 1) * boxPreviewSize,
+                        (box.x - 3) * boxPreviewSize + boxPreviewSize,
+                        (box.y + 1) * boxPreviewSize + boxPreviewSize, boxPaint
+                );
+            }
+        }
     }
 }

@@ -12,11 +12,13 @@ import com.zhenzhen.Config;
 import com.zhenzhen.R;
 import com.zhenzhen.model.BoxModel;
 import com.zhenzhen.model.MapModel;
+import com.zhenzhen.model.ScoreModel;
 
 public class GameController {
-    BoxModel boxModel; // 方块模型
-    MapModel mapModel; // 地图模型
+    BoxModel boxModel;             // 方块模型
+    MapModel mapModel;             // 地图模型
 
+    public ScoreModel scoreModel;  // 分数模型
 
     Handler handler;   // 消息处理程序
     Button btnStart;   // 暂停按钮
@@ -32,11 +34,11 @@ public class GameController {
     }
 
     /**
-     * 控制绘制
+     * 绘制游戏
      *
      * @param canvas canvas
      */
-    public void draw(Canvas canvas) {
+    public void drawGame(Canvas canvas) {
         // 绘制地图
         mapModel.drawMaps(canvas);
 
@@ -54,6 +56,15 @@ public class GameController {
     }
 
     /**
+     * 绘制预览
+     *
+     * @param canvas canvas
+     */
+    public void drawPreview(Canvas canvas, int width) {
+        boxModel.drawPreview(canvas, width);
+    }
+
+    /**
      * 初始化数据
      */
     public void initData(Context context) {
@@ -68,6 +79,9 @@ public class GameController {
 
         // 实例化方块
         boxModel = new BoxModel(boxSize);
+
+        // 实例化分数
+        scoreModel = new ScoreModel();
     }
 
     /**
@@ -114,6 +128,7 @@ public class GameController {
         // 重新开始设置状态
         isOver = false;
         isPause = false;
+        scoreModel.score = 0;
     }
 
     /**
@@ -129,7 +144,10 @@ public class GameController {
         for (Point box : boxModel.boxs) mapModel.maps[box.x][box.y] = true;
 
         // 消行
-        mapModel.passLines();
+        int linse = mapModel.passLines();
+
+        // 加分
+        scoreModel.addScore(linse);
 
         // 生成新方块
         boxModel.createBoxs();
